@@ -10,7 +10,13 @@
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </head>
     <body>
-        <h1>Hello Vue</h1>
-        <p>Welcome to the wonderful world of Vue</p>
+        <div id="content" class="container">
+            <h1>Hello Vue</h1>
+            <p>Welcome to the World of Vue</p>
+        </div>
+
+        <script>
+            Vue.createApp().mount('#content');
+        </script>
     </body>
 </html>
