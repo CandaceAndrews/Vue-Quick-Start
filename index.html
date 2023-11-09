@@ -11,12 +11,19 @@
     </head>
     <body>
         <div id="content" class="container">
-            <h1>Hello Vue</h1>
-            <p>Welcome to the World of Vue</p>
+            <h1>{{ pageTitle }}</h1>
+            <p>{{ content }}</p>
         </div>
 
         <script>
-            Vue.createApp().mount('#content');
+            Vue.createApp({
+                data() {
+                    return {
+                        pageTitle: 'Hello Vue',
+                        content: 'Welcome To The World Of Vue'
+                    }
+                }
+            }).mount('#content');
         </script>
     </body>
 </html>
