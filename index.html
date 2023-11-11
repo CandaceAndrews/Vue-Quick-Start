@@ -29,6 +29,14 @@
                         >{{ page.link.text }}</a>
                     </li>                 
                 </ul>
+                <form class="d-flex">
+                    <button 
+                        class="btn btn-primary"
+                        @click.prevent="useDarkNavbar = !useDarkNavbar"
+                    >Toggle Navbar</button>
+
+                    </button>
+                </form>
             </div>
         </nav>
 
