@@ -12,8 +12,7 @@
     <body>
         <!-- NAV BAR -->
         <nav 
-            class="navbar navbar-expand-lg"
-            :class="navbarClasses"
+            :class="['navbar-${theme}', 'bg-${theme} 'navbar', 'navbar-expand-lg']"
         >
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">My Vue</a>
@@ -33,8 +32,7 @@
                     <button 
                         class="btn btn-primary"
                         @click.prevent="useDarkNavbar = !useDarkNavbar"
-                    >Toggle Navbar</button>
-
+                    >Toggle Navbar
                     </button>
                 </form>
             </div>
