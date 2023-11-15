@@ -38,14 +38,8 @@
             </div>
         </nav>
 
-
-        <div id="content" class="container">
-            <h1>{{ pages[activePage].pageTitle }}</h1>
-            <p>{{ pages[activePage].content }}</p>
-        </div>
-
         <script>
-            Vue.createApp({
+            let app = Vue.createApp({
                 data() {
                     return {
                         activePage: 0,
@@ -79,7 +73,18 @@
                         this.theme = theme;
                     }
                 }
-            }).mount('body');
+            });
+
+            app.component('page-viewer', {
+                template: `
+                    <div class="container">
+                        <h1>Page Title</h1>
+                        <p>Page Content</p>
+                    </div>
+                `
+            })
+
+            app.mount('body');
         </script>
     </body>
 </html>
