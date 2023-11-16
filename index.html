@@ -14,6 +14,7 @@
         <navbar
             :pages="pages"
             :active-page="activePage"
+            :nav-link-click="(index) => activePage = index"
         ></navbar>
 
         <page-viewer
@@ -57,7 +58,7 @@
             });
 
             app.component('navbar', {
-                props: ['pages', 'activePage'],
+                props: ['pages', 'activePage', 'navLinkClick'],
                 template: `
                     <nav 
                         :class="[\`navbar-\${theme}\`, \`bg-\${theme}\`, 'navbar', 'navbar-expand-lg']"
@@ -72,7 +73,7 @@
                                         aria-current="page" 
                                         :href="page.link.url"
                                         :title="\`This link goes to the \${page.link.text} page\`"
-                                        @click.prevent="activePage = index"
+                                        @click.prevent="navLinkClick(index)"
                                     >{{ page.link.text }}</a>
                                 </li>                 
                             </ul>
