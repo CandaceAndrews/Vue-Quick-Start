@@ -10,13 +10,14 @@
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </head>
     <body>
-
+        <!-- Generates The Navbar -->
         <navbar
             :pages="pages"
             :active-page="activePage"
             :nav-link-click="(index) => activePage = index"
         ></navbar>
 
+        <!-- Displays Page Information -->
         <page-viewer
             :page="pages[activePage]"
         ></page-viewer>
