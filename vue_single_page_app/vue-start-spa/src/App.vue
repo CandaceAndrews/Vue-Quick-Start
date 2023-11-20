@@ -19,17 +19,21 @@ export default {
         Navbar,
         PageViewer
     },
+    created() {
+        this.getPages();
+    },
     data() {
         return {
             activePage: 0,
-            pages: [
-
-            ]
+            pages: this.getPages()
         };
     },
     methods: {
         async getPages() {
             let res = await fetch('pages.json');
+            let data = await res.json();
+
+            this.pages = data;
         }
     }
 }
