@@ -6,6 +6,7 @@
     ></navbar>
 
     <page-viewer
+        v-if="pages.length > 0"
         :page="pages[activePage]"
     ></page-viewer>
 </template>
@@ -25,7 +26,7 @@ export default {
     data() {
         return {
             activePage: 0,
-            pages: this.getPages()
+            pages: []
         };
     },
     methods: {
