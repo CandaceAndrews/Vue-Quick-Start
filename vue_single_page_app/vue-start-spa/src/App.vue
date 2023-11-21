@@ -5,10 +5,14 @@
         :nav-link-click="(index) => activePage = index"
     ></navbar>
 
-    <page-viewer
+    <!-- <page-viewer
         v-if="pages.length > 0"
         :page="pages[activePage]"
-    ></page-viewer>
+    ></page-viewer> -->
+
+    <create-page
+    :page-created="pageCreated"
+    ></create-page>
 </template>
 
 <script>
@@ -35,6 +39,9 @@ export default {
             let data = await res.json();
 
             this.pages = data;
+        },
+        pageCreated(pageObj) {
+            console.log(pageObj);
         }
     }
 }
