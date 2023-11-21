@@ -18,11 +18,13 @@
 <script>
 import Navbar from './components/Navbar.vue';
 import PageViewer from './components/PageViewer.vue';
+import CreatePage from './components/CreatePage.vue';
 
 export default {
     components: {
         Navbar,
-        PageViewer
+        PageViewer,
+        CreatePage
     },
     created() {
         this.getPages();

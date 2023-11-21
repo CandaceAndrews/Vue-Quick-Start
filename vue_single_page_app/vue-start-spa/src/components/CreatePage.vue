@@ -8,6 +8,8 @@
                 <input
                     type="text"
                     class="form-control"
+                    :value="pageTitle"
+                    @input="(e) => pageTitle = e.target.value"
                 />
             </div>
             <div class="mb-3">
@@ -23,6 +25,7 @@
             <div class="mb-3">
                     <button
                         class="btn btn-primary"
+                        @click.prevent="pageCreated({pageTitle})"
                     >Create Page</button>
             </div>
         </form>
@@ -30,6 +33,11 @@
 </template>
 <script>
 export default {
-    props: ['pageCreated']
+    props: ['pageCreated'],
+    data() {
+        return {
+            pageTitle: ''
+        }
+    }
 }
 </script>
