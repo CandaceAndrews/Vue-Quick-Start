@@ -36,16 +36,18 @@
                         v-model="linkText"
                     />
                 </div>
+                
                 <div class="mb-3">
                     <label for="" class="form-label">
                         Link URL
                     </label>
                     <input
                         type="text"
-                        class="form-contol"
-                        v-model="linkURL"
+                        class="form-control"
+                        v-model="linkUrl"
                     />
                 </div>
+
                 <div class="row mb-3">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox">
@@ -55,11 +57,12 @@
                     </div>
                 </div>
             </div>
+            
             <div class="mb-3">
-                    <button
-                        class="btn btn-primary"
-                        @click.prevent="pageCreated({pageTitle, content})"
-                    >Create Page</button>
+                <button
+                    class="btn btn-primary"
+                    @click.prevent="submitForm"
+                >Create Page</button>
             </div>
         </div>
     </form>
@@ -72,7 +75,24 @@ export default {
             pageTitle: '',
             content: '',
             linkText: '',
-            linkURL: '',
+            linkUrl: '',
+        }
+    },
+    methods: {
+        submitForm() {
+            if (!this.pageTitle || !this.content || !this.linkText || !this.linkUrl) {
+                alert ('Please fill the form.');
+                return;
+            }
+
+            this.pageCreated({
+                pageTitle: this.pageTitle,
+                content: this.content,
+                link: {
+                    text: this.linkText,
+                    url: this.linkUrl
+                }
+            })
         }
     }
 }
