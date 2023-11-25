@@ -71,7 +71,7 @@
 <script>
 export default {
     emits: {
-        pageCreated(pageTitle, content, link, published) {
+        pageCreated({pageTitle, content, link, published}) {
             if (!pageTitle) {
                 return false;
             }
@@ -81,6 +81,10 @@ export default {
             if (!link || !link.text || !link.url) {
                 return false;
             }
+
+            return true;
+
+        }
     },
     computed: {
         isFormInvalid() {
