@@ -9,7 +9,7 @@
                         v-for="(page, index) in publishedPages" class="nav-item" :key="index"
                         :page="page"
                         :isActive="activePage == index"
-                        @click.prevent="navLinkClick(index)" 
+                        @activated="$emit('activated')"
                     ></navbar-link>               
             </ul>
             <form class="d-flex">
