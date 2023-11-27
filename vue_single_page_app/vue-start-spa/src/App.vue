@@ -4,10 +4,10 @@
         :active-page="activePage"
     ></navbar>
 
-    <!-- <page-viewer
+    <page-viewer
         v-if="pages.length > 0"
         :page="pages[activePage]"
-    ></page-viewer> -->
+    ></page-viewer>
 
     <create-page
     @page-created="pageCreated"
@@ -28,7 +28,7 @@ export default {
     created() {
         this.getPages();
 
-        this.$bus.$on('navbarLinkActivated', (index) => {
+        this.$bus.$on('navbarLinkActived', (index) => {
             this.activePage = index;
         });
     },
