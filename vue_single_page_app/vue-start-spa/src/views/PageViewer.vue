@@ -15,6 +15,7 @@ export default {
         // this.$watch(() => this.$route.params, (newParams, prevParams) => {
         //     this.page = this.$pages.getSinglePage(newParams.index);
         // });
+        
     },
     data() {
         return {
