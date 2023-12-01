@@ -60,7 +60,7 @@
 
 <script setup>
 import {ref, inject, computed, watch} from  'vue';
-import { useRouterk } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 const bus = inject('$bus');
 const pages = inject('$pages');
@@ -78,12 +78,12 @@ function submitForm() {
     }
 
     let newPage = {            
-        pageTitle,
-        content,
+        pageTitle: pageTitle.value,
+        content: content.value,
         link: {
-            text: linkText,
+            text: linkText.value,
         },
-        published
+        published: published.value
     };
 
     pages.addPage(newPage)
@@ -97,8 +97,8 @@ function submitForm() {
 const isFormInvalid = computed(() => !pageTitle || !content || !linkText);
 
 watch(pageTitle, (newTitle, oldTitle) => {
-    if (linkText == oldTitle) {
-        linkText = newTitle;
+    if (linkText.value == oldTitle) {
+        linkText.value = newTitle;
     }
 });
 
